@@ -1,6 +1,34 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { boardOfDirectors } from '../data/board';
+
+// Direct Contact list ordered strictly: Membership > Education > Exhibitions > Distinctions / President
+const directContacts = [
+  {
+    portfolio: "Registrar & Membership",
+    officer: "Saliya Liyanage (Director)",
+    phone: "+94 713 963 030",
+    email: "Saliyaliyanage79@gmail.com"
+  },
+  {
+    portfolio: "Education & Diploma",
+    officer: "Sisira Kumara (Director)",
+    phone: "+94 717 189 038",
+    email: "sisira.ts@gmail.com"
+  },
+  {
+    portfolio: "Exhibitions & Salons",
+    officer: "Chamara Ranathunga (Director)",
+    phone: "+94 771 739 354",
+    email: "chamara.sa@gmail.com"
+  },
+  {
+    portfolio: "President & FIAP Matters",
+    officer: "Sanka Sammana (President / FIAP Liaison)",
+    phone: "+94 77 776 8015",
+    email: "sankasammana@gmail.com"
+  }
+];
 ---
 
 <BaseLayout 
@@ -22,7 +50,7 @@ import { boardOfDirectors } from '../data/board';
   <section class="py-16 sm:py-24 bg-neutral-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-start">
         
         <!-- Details & Directory -->
         <div class="space-y-8">
@@ -38,62 +66,61 @@ import { boardOfDirectors } from '../data/board';
                 Kiribathgoda. 11600, Sri Lanka.
               </p>
               <div class="pt-2 space-y-1.5 text-xs text-neutral-400">
-                <p><strong>General Inquiry Emails:</strong></p>
+                <p><strong class="text-neutral-200">Official Society Inquiries:</strong></p>
                 <p>✉️ <a href="mailto:npas@sltnet.lk" class="text-amber-400 hover:underline">npas@sltnet.lk</a></p>
                 <p>✉️ <a href="mailto:npassrilanka@gmail.com" class="text-amber-400 hover:underline">npassrilanka@gmail.com</a></p>
                 <p>✉️ <a href="mailto:npas.fiap.acct@gmail.com" class="text-amber-400 hover:underline">npas.fiap.acct@gmail.com</a></p>
+                <p class="pt-1">📞 <a href="tel:+94713963030" class="text-neutral-200 hover:text-amber-400">+94 71 396 3030</a></p>
               </div>
             </div>
           </div>
 
-          <!-- Quick Directory for Specific Matters -->
-          <div class="p-8 rounded-3xl bg-neutral-900 border border-neutral-800 space-y-4 shadow-xl">
-            <h3 class="text-lg font-bold text-white">Direct Contact by Portfolio</h3>
+          <!-- Direct Contact by Portfolio (Ordered: Membership > Education > Exhibitions > President) with Phone AND Email -->
+          <div class="p-8 rounded-3xl bg-neutral-900 border border-neutral-800 space-y-6 shadow-xl">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+              <span class="text-amber-400">👤</span> Direct Contact by Portfolio
+            </h3>
             
-            <div class="space-y-3 text-xs text-neutral-300 divide-y divide-neutral-800">
-              <div class="pt-2 flex justify-between items-center">
-                <div>
-                  <strong class="text-white">Exhibitions & Salons:</strong>
-                  <p class="text-neutral-400">Chamara Ranathunga (Director)</p>
-                </div>
-                <a href="mailto:chamara.sa@gmail.com" class="text-amber-400 hover:underline">+94 771 739 354</a>
-              </div>
+            <div class="space-y-4 divide-y divide-neutral-800">
+              {directContacts.map((contact, index) => (
+                <div class={`flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${index > 0 ? 'pt-4' : ''}`}>
+                  <div class="space-y-1">
+                    <span class="text-xs font-bold text-amber-400 uppercase tracking-wider block">
+                      {contact.portfolio}
+                    </span>
+                    <strong class="text-sm font-semibold text-white block">
+                      {contact.officer}
+                    </strong>
+                    <a
+                      href={`mailto:${contact.email}`}
+                      class="text-xs text-neutral-400 hover:text-amber-400 transition-colors flex items-center gap-1.5"
+                    >
+                      <span>✉</span> {contact.email}
+                    </a>
+                  </div>
 
-              <div class="pt-2 flex justify-between items-center">
-                <div>
-                  <strong class="text-white">Registrar & Membership:</strong>
-                  <p class="text-neutral-400">Saliya Liyanage (Director)</p>
+                  <div class="sm:text-right flex-shrink-0">
+                    <a
+                      href={`tel:${contact.phone.replace(/\s+/g, '')}`}
+                      class="inline-block px-3.5 py-1.5 rounded-lg bg-neutral-950 border border-neutral-800 text-amber-400 hover:text-white hover:border-amber-500 font-bold text-xs tracking-wider transition-all"
+                    >
+                      📞 {contact.phone}
+                    </a>
+                  </div>
                 </div>
-                <a href="mailto:Saliyaliyanage79@gmail.com" class="text-amber-400 hover:underline">+94 713 963 030</a>
-              </div>
-
-              <div class="pt-2 flex justify-between items-center">
-                <div>
-                  <strong class="text-white">Education & Diploma:</strong>
-                  <p class="text-neutral-400">Sisira Kumara (Director)</p>
-                </div>
-                <a href="mailto:sisira.ts@gmail.com" class="text-amber-400 hover:underline">+94 717 189 038</a>
-              </div>
-
-              <div class="pt-2 flex justify-between items-center">
-                <div>
-                  <strong class="text-white">President & FIAP Matters:</strong>
-                  <p class="text-neutral-400">Sanka Sammana (President)</p>
-                </div>
-                <a href="mailto:sankasammana@gmail.com" class="text-amber-400 hover:underline">+94 77 776 8015</a>
-              </div>
+              ))}
             </div>
           </div>
 
         </div>
 
         <!-- Embedded Map with Kiribathgoda Location -->
-        <div class="rounded-3xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-xl min-h-[400px]">
+        <div class="rounded-3xl overflow-hidden border border-neutral-800 bg-neutral-900 shadow-xl min-h-[460px] sticky top-28">
           <iframe
             src="https://maps.google.com/maps?q=82C%2C%20Sri%20Sudarshanarama%20Road%2C%20Kiribathgoda&t=m&z=16&output=embed&iwloc=near"
             width="100%"
             height="100%"
-            style="border:0; min-height: 480px;"
+            style="border:0; min-height: 520px;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
