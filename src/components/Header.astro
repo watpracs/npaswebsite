@@ -13,7 +13,7 @@ const navLinks = [
 ];
 ---
 
-<!-- Top Utility Bar -->
+<!-- Top Utility Bar (Row 1) -->
 <div class="bg-neutral-950 text-neutral-400 text-xs py-2 px-4 border-b border-neutral-800/80">
   <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
     <div class="flex items-center gap-3 sm:gap-4 text-center sm:text-left text-[11px] sm:text-xs">
@@ -29,80 +29,86 @@ const navLinks = [
   </div>
 </div>
 
-<!-- Main Navigation Bar -->
-<header class="sticky top-0 z-50 bg-neutral-900/95 backdrop-blur-md border-b border-neutral-800 text-white shadow-xl">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between h-24">
-      
-      <!-- Brand Logo & Full Society Name (Bigger, Dignified Logo) -->
-      <a href="/" class="flex items-center gap-3.5 group flex-shrink-0">
-        <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-neutral-950 border border-neutral-700/80 p-1.5 shadow-lg group-hover:border-amber-500/50 group-hover:scale-102 transition-all flex items-center justify-center">
-          <img
-            src="/assets/images/logos/NPAS-Official-Logo.png"
-            alt="The National Photographic Art Society of Sri Lanka Logo"
-            class="w-full h-full object-contain"
-          />
-        </div>
-        <div class="flex flex-col">
-          <span class="font-extrabold text-sm sm:text-base lg:text-lg tracking-tight text-white group-hover:text-amber-400 transition-colors leading-tight">
-            The National Photographic Art Society
-          </span>
-          <span class="text-[11px] sm:text-xs font-semibold text-amber-400/90 tracking-wide uppercase mt-0.5">
-            of Sri Lanka <span class="text-neutral-500 font-normal">| Est. 1950</span>
-          </span>
-        </div>
-      </a>
-
-      <!-- Desktop Nav Links -->
-      <nav class="hidden xl:flex items-center gap-1">
-        {navLinks.map((link) => (
-          <a
-            href={link.href}
-            class="px-2.5 py-2 text-xs font-medium text-neutral-300 hover:text-amber-400 hover:bg-neutral-800/60 rounded-md transition-all whitespace-nowrap"
-          >
-            {link.name}
-          </a>
-        ))}
-        <a
-          href="/membership"
-          class="ml-2 inline-flex items-center px-4 py-2.5 text-xs font-bold uppercase tracking-wider rounded-lg bg-amber-500 hover:bg-amber-400 text-neutral-950 transition-all shadow-md hover:shadow-amber-500/20 whitespace-nowrap"
-        >
-          JOIN NPAS
+<!-- Header Container (Row 2 & Row 3) -->
+<header class="sticky top-0 z-50 bg-neutral-900/95 backdrop-blur-md border-b border-neutral-800 text-white shadow-2xl">
+  
+  <!-- Row 2: Brand Identity Bar (Logo, Full Name, Contact CTA, Mobile Toggle) -->
+  <div class="border-b border-neutral-800/80 py-4 sm:py-5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between">
+        
+        <!-- Large Emblem Logo & Dignified Full Title -->
+        <a href="/" class="flex items-center gap-4 group">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-neutral-950 border border-neutral-700/80 p-2 shadow-xl group-hover:border-amber-500/60 group-hover:scale-102 transition-all flex items-center justify-center flex-shrink-0">
+            <img
+              src="/assets/images/logos/NPAS-Official-Logo.png"
+              alt="The National Photographic Art Society of Sri Lanka Logo"
+              class="w-full h-full object-contain"
+            />
+          </div>
+          <div class="flex flex-col">
+            <span class="font-extrabold text-base sm:text-xl lg:text-2xl tracking-tight text-white group-hover:text-amber-400 transition-colors leading-tight">
+              The National Photographic Art Society
+            </span>
+            <span class="text-xs sm:text-sm font-semibold text-amber-400 tracking-wider uppercase mt-1">
+              of Sri Lanka <span class="text-neutral-500 font-normal">| Established 1950</span>
+            </span>
+          </div>
         </a>
-      </nav>
 
-      <!-- Desktop Nav Links for medium-large (1024px to 1280px) -->
-      <nav class="hidden lg:flex xl:hidden items-center gap-0.5">
-        {navLinks.slice(0, 6).map((link) => (
+        <!-- Right Side: Quick Action & Affiliation Indicator on Desktop -->
+        <div class="hidden lg:flex items-center gap-6">
+          <div class="text-right text-xs text-neutral-400">
+            <span class="block text-neutral-300 font-medium">FIAP Operational Member</span>
+            <span class="text-[11px] text-neutral-500">Representative for Sri Lanka</span>
+          </div>
           <a
-            href={link.href}
-            class="px-2 py-1.5 text-xs font-medium text-neutral-300 hover:text-amber-400 hover:bg-neutral-800/60 rounded-md transition-all whitespace-nowrap"
+            href="/membership"
+            class="inline-flex items-center px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl bg-amber-500 hover:bg-amber-400 text-neutral-950 transition-all shadow-md hover:shadow-amber-500/20 whitespace-nowrap"
           >
-            {link.name}
+            JOIN NPAS
           </a>
-        ))}
-        <a
-          href="/membership"
-          class="ml-1 inline-flex items-center px-3 py-1.5 text-xs font-bold uppercase tracking-wider rounded-lg bg-amber-500 hover:bg-amber-400 text-neutral-950 transition-all whitespace-nowrap"
-        >
-          JOIN
-        </a>
-      </nav>
+        </div>
 
-      <!-- Mobile Menu Button -->
-      <div class="flex lg:hidden">
-        <button
-          type="button"
-          id="mobile-menu-btn"
-          class="p-2.5 rounded-lg text-neutral-400 hover:text-white hover:bg-neutral-800 focus:outline-none"
-          aria-label="Toggle Navigation"
-        >
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+        <!-- Mobile Menu Hamburger Button -->
+        <div class="flex lg:hidden">
+          <button
+            type="button"
+            id="mobile-menu-btn"
+            class="p-2.5 rounded-xl text-neutral-300 hover:text-white bg-neutral-950 border border-neutral-800 hover:border-amber-500/50 focus:outline-none transition-colors"
+            aria-label="Toggle Navigation"
+          >
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
       </div>
+    </div>
+  </div>
 
+  <!-- Row 3: Dedicated Full-Width Navigation Menu Bar -->
+  <div class="hidden lg:block bg-neutral-950/70 border-b border-neutral-800/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav class="flex items-center justify-between py-1">
+        <div class="flex items-center gap-1 xl:gap-2">
+          {navLinks.map((link) => (
+            <a
+              href={link.href}
+              class="px-3.5 py-2.5 text-xs xl:text-sm font-semibold text-neutral-300 hover:text-amber-400 hover:bg-neutral-900 rounded-lg transition-all tracking-wide whitespace-nowrap"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+        <div class="flex items-center text-xs text-neutral-400 gap-3">
+          <span class="text-neutral-600">•</span>
+          <a href="/exhibitions" class="hover:text-amber-400 transition-colors">46th Exhibition Results</a>
+          <span class="text-neutral-600">•</span>
+          <a href="/distinctions" class="text-amber-400/90 hover:text-amber-300 transition-colors">Apply Distinctions</a>
+        </div>
+      </nav>
     </div>
   </div>
 
@@ -111,7 +117,7 @@ const navLinks = [
     {navLinks.map((link) => (
       <a
         href={link.href}
-        class="block px-3 py-2.5 rounded-md text-base font-medium text-neutral-300 hover:text-amber-400 hover:bg-neutral-900"
+        class="block px-3 py-2.5 rounded-lg text-base font-medium text-neutral-300 hover:text-amber-400 hover:bg-neutral-900"
       >
         {link.name}
       </a>
@@ -119,12 +125,13 @@ const navLinks = [
     <div class="pt-4">
       <a
         href="/membership"
-        class="block text-center w-full px-4 py-3 rounded-lg bg-amber-500 text-neutral-950 font-bold uppercase text-sm tracking-wider"
+        class="block text-center w-full px-4 py-3 rounded-xl bg-amber-500 text-neutral-950 font-bold uppercase text-sm tracking-wider shadow-md"
       >
         Join NPAS
       </a>
     </div>
   </div>
+
 </header>
 
 <script>
