@@ -32,14 +32,14 @@ const navLinks = [
 <!-- Header Container (Row 2 & Row 3) -->
 <header class="sticky top-0 z-50 bg-neutral-900/95 backdrop-blur-md border-b border-neutral-800 text-white shadow-2xl">
   
-  <!-- Row 2: Brand Identity Bar (Logo, Full Name, Contact CTA, Mobile Toggle) -->
+  <!-- Row 2: Brand Identity Bar ("The National Photographic Art Society of Sri Lanka" all together on the same line) -->
   <div class="border-b border-neutral-800/80 py-4 sm:py-5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between">
         
-        <!-- Large Emblem Logo & Dignified Full Title -->
+        <!-- Large Emblem Logo & Full Society Name Together -->
         <a href="/" class="flex items-center gap-4 group">
-          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-neutral-950 border border-neutral-700/80 p-2 shadow-xl group-hover:border-amber-500/60 group-hover:scale-102 transition-all flex items-center justify-center flex-shrink-0">
+          <div class="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-2xl bg-neutral-950 border border-neutral-700/80 p-1.5 sm:p-2 shadow-xl group-hover:border-amber-500/60 group-hover:scale-102 transition-all flex items-center justify-center flex-shrink-0">
             <img
               src="/assets/images/logos/NPAS-Official-Logo.png"
               alt="The National Photographic Art Society of Sri Lanka Logo"
@@ -47,21 +47,17 @@ const navLinks = [
             />
           </div>
           <div class="flex flex-col">
-            <span class="font-extrabold text-base sm:text-xl lg:text-2xl tracking-tight text-white group-hover:text-amber-400 transition-colors leading-tight">
-              The National Photographic Art Society
+            <span class="font-extrabold text-sm sm:text-lg lg:text-2xl tracking-tight text-white group-hover:text-amber-400 transition-colors leading-tight">
+              The National Photographic Art Society of Sri Lanka
             </span>
-            <span class="text-xs sm:text-sm font-semibold text-amber-400 tracking-wider uppercase mt-1">
-              of Sri Lanka <span class="text-neutral-500 font-normal">| Established 1950</span>
+            <span class="text-[11px] sm:text-xs font-semibold text-amber-400/90 tracking-widest uppercase mt-0.5 sm:mt-1">
+              Established 1950 • FIAP Operational Member
             </span>
           </div>
         </a>
 
-        <!-- Right Side: Quick Action & Affiliation Indicator on Desktop -->
-        <div class="hidden lg:flex items-center gap-6">
-          <div class="text-right text-xs text-neutral-400">
-            <span class="block text-neutral-300 font-medium">FIAP Operational Member</span>
-            <span class="text-[11px] text-neutral-500">Representative for Sri Lanka</span>
-          </div>
+        <!-- Right Side: Action Button on Desktop -->
+        <div class="hidden lg:flex items-center gap-4">
           <a
             href="/membership"
             class="inline-flex items-center px-5 py-2.5 text-xs font-bold uppercase tracking-wider rounded-xl bg-amber-500 hover:bg-amber-400 text-neutral-950 transition-all shadow-md hover:shadow-amber-500/20 whitespace-nowrap"
@@ -88,25 +84,19 @@ const navLinks = [
     </div>
   </div>
 
-  <!-- Row 3: Dedicated Full-Width Navigation Menu Bar -->
+  <!-- Row 3: Dedicated Full-Width Navigation Menu Bar (Clean: No extra clutter on the right) -->
   <div class="hidden lg:block bg-neutral-950/70 border-b border-neutral-800/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="flex items-center justify-between py-1">
-        <div class="flex items-center gap-1 xl:gap-2">
+      <nav class="flex items-center justify-between py-1.5">
+        <div class="flex items-center gap-2 xl:gap-4">
           {navLinks.map((link) => (
             <a
               href={link.href}
-              class="px-3.5 py-2.5 text-xs xl:text-sm font-semibold text-neutral-300 hover:text-amber-400 hover:bg-neutral-900 rounded-lg transition-all tracking-wide whitespace-nowrap"
+              class="px-3 py-2 text-xs xl:text-sm font-semibold text-neutral-300 hover:text-amber-400 hover:bg-neutral-900 rounded-lg transition-all tracking-wide whitespace-nowrap"
             >
               {link.name}
             </a>
           ))}
-        </div>
-        <div class="flex items-center text-xs text-neutral-400 gap-3">
-          <span class="text-neutral-600">•</span>
-          <a href="/exhibitions" class="hover:text-amber-400 transition-colors">46th Exhibition Results</a>
-          <span class="text-neutral-600">•</span>
-          <a href="/distinctions" class="text-amber-400/90 hover:text-amber-300 transition-colors">Apply Distinctions</a>
         </div>
       </nav>
     </div>
