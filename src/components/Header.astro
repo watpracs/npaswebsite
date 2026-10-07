@@ -1,0 +1,120 @@
+---
+const navLinks = [
+  { name: "Home", href: "/" },
+  { name: "About Us", href: "/about-us" },
+  { name: "Membership", href: "/membership" },
+  { name: "Education", href: "/education" },
+  { name: "Exhibitions", href: "/exhibitions" },
+  { name: "Distinctions", href: "/distinctions" },
+  { name: "Events", href: "/events" },
+  { name: "Publication", href: "/publication" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Contact", href: "/contact-us" }
+];
+---
+
+<!-- Top Utility Bar -->
+<div class="bg-neutral-950 text-neutral-400 text-xs py-2 px-4 border-b border-neutral-800">
+  <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+    <div class="flex items-center gap-3 sm:gap-4 text-center sm:text-left text-[11px] sm:text-xs">
+      <span>📍 82C, Sri Sudarshanarama Road, Kiribathgoda. 11600, Sri Lanka</span>
+      <span class="hidden md:inline text-neutral-700">|</span>
+      <span class="hidden md:inline">📞 +94 71 396 3030</span>
+    </div>
+    <div class="flex items-center gap-3 sm:gap-4 text-[11px] sm:text-xs">
+      <a href="mailto:npas@sltnet.lk" class="hover:text-amber-400 transition-colors">✉️ npas@sltnet.lk</a>
+      <span class="text-neutral-700">|</span>
+      <span class="text-amber-400 font-semibold tracking-wide">FIAP Operational Member</span>
+    </div>
+  </div>
+</div>
+
+<!-- Main Navigation Bar -->
+<header class="sticky top-0 z-50 bg-neutral-900/95 backdrop-blur-md border-b border-neutral-800 text-white shadow-xl">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Brand Logo & Identity -->
+      <a href="/" class="flex items-center gap-3.5 group flex-shrink-0">
+        <div class="w-12 h-12 rounded-xl bg-white/5 border border-neutral-700/80 p-1 shadow-lg group-hover:scale-105 transition-transform flex items-center justify-center">
+          <img
+            src="/assets/images/logos/NPAS-Official-Logo.png"
+            alt="NPAS Sri Lanka Official Logo"
+            class="w-full h-full object-contain"
+          />
+        </div>
+        <div class="flex flex-col">
+          <span class="font-bold text-base sm:text-lg tracking-wide text-neutral-100 group-hover:text-amber-400 transition-colors">
+            NPAS SRI LANKA
+          </span>
+          <span class="text-[10px] text-neutral-400 uppercase tracking-widest hidden sm:block">
+            National Photographic Art Society • Est. 1950
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links (Ordered: Home > About Us > Membership > Education > Exhibitions > Distinctions > Events > Publication > Gallery > Contact) -->
+      <nav class="hidden lg:flex items-center gap-0.5 xl:gap-1.5">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-medium text-neutral-300 hover:text-amber-400 hover:bg-neutral-800/60 rounded-md transition-all whitespace-nowrap"
+          >
+            {link.name}
+          </a>
+        ))}
+        <a
+          href="/membership"
+          class="ml-2 inline-flex items-center px-3.5 xl:px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-lg bg-amber-500 hover:bg-amber-400 text-neutral-950 transition-all shadow-md hover:shadow-amber-500/20 whitespace-nowrap"
+        >
+          JOIN NPAS
+        </a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex lg:hidden">
+        <button
+          type="button"
+          id="mobile-menu-btn"
+          class="p-2 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800 focus:outline-none"
+          aria-label="Toggle Navigation"
+        >
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-neutral-950 border-b border-neutral-800 px-4 pt-2 pb-6 space-y-1">
+    {navLinks.map((link) => (
+      <a
+        href={link.href}
+        class="block px-3 py-2.5 rounded-md text-base font-medium text-neutral-300 hover:text-amber-400 hover:bg-neutral-900"
+      >
+        {link.name}
+      </a>
+    ))}
+    <div class="pt-4">
+      <a
+        href="/membership"
+        class="block text-center w-full px-4 py-2.5 rounded bg-amber-500 text-neutral-950 font-bold uppercase text-sm tracking-wider"
+      >
+        Join NPAS
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  }
+</script>

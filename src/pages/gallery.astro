@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { exhibitionsData } from '../data/exhibitions';
+
+const allWinners = exhibitionsData.flatMap(e => e.featuredWinners || []);
+
+const societyGalleries = [
+  {
+    title: "Field Photography Excursion - Kandy & Highlands",
+    category: "Events & Excursions",
+    image: "/assets/images/gallery/gallery-04.jpg",
+    description: "Society members during practical field session in Kandy."
+  },
+  {
+    title: "Nature & Wetland Workshop - Kithulgala & Muthurajawela",
+    category: "Events & Excursions",
+    image: "/assets/images/gallery/gallery-05.jpg",
+    description: "Hands-on macro and nature field workshop with society mentors."
+  },
+  {
+    title: "Members Annual Showcase - Composition I",
+    category: "Members Portfolio",
+    image: "/assets/images/gallery/gallery-01.jpg",
+    description: "Fine art photographic creations submitted by NPAS members."
+  },
+  {
+    title: "Members Annual Showcase - Composition II",
+    category: "Members Portfolio",
+    image: "/assets/images/gallery/gallery-02.jpg",
+    description: "Creative perspectives from annual member submissions."
+  },
+  {
+    title: "Members Annual Showcase - Heritage & Portraiture",
+    category: "Members Portfolio",
+    image: "/assets/images/gallery/gallery-03.jpg",
+    description: "Capturing the expressive cultural character of Sri Lanka."
+  }
+];
+---
+
+<BaseLayout 
+  title="Photo Gallery"
+  description="Explore award-winning photographic masterworks, international salon medalists, and field workshops of the National Photographic Art Society of Sri Lanka."
+>
+  <!-- Page Header -->
+  <section class="bg-neutral-900/60 border-b border-neutral-800 py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Visual Art Showcase</span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">Photographic Gallery</h1>
+      <p class="max-w-2xl mx-auto text-neutral-400 text-sm sm:text-base leading-relaxed px-4">
+        A curated collection of medal-winning entries, member masterpieces, and field workshop highlights.
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 1: International & National Medal Winners -->
+  <section class="py-16 sm:py-20 bg-neutral-950 border-b border-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="flex flex-wrap items-center justify-between border-b border-neutral-800 pb-4 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Award Showcase</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2 mt-1">
+            <span>🏅</span> FIAP & NPAS Medal Winners
+          </h2>
+        </div>
+        <div class="text-xs text-neutral-400 font-medium">
+          Showing {allWinners.length} Curated Salon Medals
+        </div>
+      </div>
+
+      <!-- Image Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {allWinners.map((photo) => (
+          <div class="group rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden hover:border-amber-500/50 transition-all hover:-translate-y-1 shadow-lg flex flex-col justify-between">
+            <div class="h-64 overflow-hidden bg-neutral-950 relative">
+              <img
+                src={photo.image}
+                alt={`${photo.title} by ${photo.photographer}`}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 px-2.5 py-1 rounded bg-neutral-950/85 backdrop-blur-md text-amber-400 text-[11px] font-bold border border-neutral-800">
+                {photo.award}
+              </div>
+            </div>
+            
+            <div class="p-5 space-y-1 bg-neutral-900 flex-grow flex flex-col justify-between">
+              <div>
+                <h3 class="text-base font-bold text-white group-hover:text-amber-400 transition-colors">
+                  "{photo.title}"
+                </h3>
+                <p class="text-xs font-semibold text-neutral-300 mt-1">
+                  {photo.photographer}
+                </p>
+              </div>
+              <p class="text-[11px] text-neutral-500 pt-2 border-t border-neutral-800/80">
+                {photo.country}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Section 2: Members & Excursions Gallery -->
+  <section class="py-16 sm:py-20 bg-neutral-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="flex flex-wrap items-center justify-between border-b border-neutral-800 pb-4 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-sky-400">Fraternity Life</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white flex items-center gap-2 mt-1">
+            <span>📷</span> Members Portfolio & Field Workshops
+          </h2>
+        </div>
+      </div>
+
+      <!-- Image Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {societyGalleries.map((item) => (
+          <div class="group rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden hover:border-sky-500/50 transition-all hover:-translate-y-1 shadow-lg">
+            <div class="h-60 overflow-hidden bg-neutral-950 relative">
+              <img
+                src={item.image}
+                alt={item.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 px-2.5 py-1 rounded bg-neutral-950/85 backdrop-blur-md text-sky-400 text-[11px] font-bold border border-neutral-800">
+                {item.category}
+              </div>
+            </div>
+            
+            <div class="p-6 space-y-2">
+              <h3 class="text-base font-bold text-white group-hover:text-sky-400 transition-colors">
+                {item.title}
+              </h3>
+              <p class="text-xs text-neutral-400 leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>

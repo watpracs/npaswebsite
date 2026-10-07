@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Events & Workshops"
+  description="Upcoming photography seminars, lighting workshops, webinars, field excursions, and get-togethers by the National Photographic Art Society of Sri Lanka."
+>
+  <!-- Page Header -->
+  <section class="bg-neutral-900/60 border-b border-neutral-800 py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Community Activities</span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">Events & Workshops</h1>
+      <p class="max-w-2xl mx-auto text-neutral-400 text-sm sm:text-base leading-relaxed px-4">
+        Interactive hands-on workshops, masterclass webinars, field photography excursions, and society fellowship meetings.
+      </p>
+    </div>
+  </section>
+
+  <!-- Events List -->
+  <section class="py-16 sm:py-20 bg-neutral-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Event Card 1 -->
+        <div class="rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden hover:border-amber-500/40 transition-all flex flex-col justify-between">
+          <div class="p-6 sm:p-8 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-amber-500/10 text-amber-400 text-xs font-bold uppercase">
+                Workshop
+              </span>
+              <span class="text-xs text-neutral-500 font-medium">Annual</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Studio & Outdoor Lighting Masterclass</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">
+              Hands-on practical training covering continuous light, flash sync, softboxes, modifiers, and portrait direction.
+            </p>
+          </div>
+          <div class="p-6 bg-neutral-950/60 border-t border-neutral-800 text-xs text-neutral-400 flex justify-between items-center">
+            <span>📍 Colombo Studio Sessions</span>
+            <span class="text-amber-400 font-semibold">Members Priority</span>
+          </div>
+        </div>
+
+        <!-- Event Card 2 -->
+        <div class="rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden hover:border-amber-500/40 transition-all flex flex-col justify-between">
+          <div class="p-6 sm:p-8 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-sky-500/10 text-sky-400 text-xs font-bold uppercase">
+                Webinar
+              </span>
+              <span class="text-xs text-neutral-500 font-medium">Online</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">NPAS Monthly Webinar Series</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">
+              Interactive Zoom discussions featuring acclaimed local and international masters discussing salon techniques, street ethics, and wildlife photography.
+            </p>
+          </div>
+          <div class="p-6 bg-neutral-950/60 border-t border-neutral-800 text-xs text-neutral-400 flex justify-between items-center">
+            <span>🌐 Online (Zoom)</span>
+            <span class="text-sky-400 font-semibold">Free for Members</span>
+          </div>
+        </div>
+
+        <!-- Event Card 3 -->
+        <div class="rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden hover:border-amber-500/40 transition-all flex flex-col justify-between">
+          <div class="p-6 sm:p-8 space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 text-xs font-bold uppercase">
+                Field Excursion
+              </span>
+              <span class="text-xs text-neutral-500 font-medium">Outdoor</span>
+            </div>
+            <h3 class="text-xl font-bold text-white">Landscape & Wildlife Photo Excursion</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">
+              Organized photographic field trips to scenic destinations across Sri Lanka including Muthurajawela wetlands, Kithulgala, and Kandy.
+            </p>
+          </div>
+          <div class="p-6 bg-neutral-950/60 border-t border-neutral-800 text-xs text-neutral-400 flex justify-between items-center">
+            <span>🌿 Island-wide</span>
+            <span class="text-emerald-400 font-semibold">Guided Group Tour</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Contact Director Promotions -->
+      <div class="p-8 rounded-2xl bg-neutral-900/60 border border-neutral-800 flex flex-col sm:flex-row justify-between items-center gap-6">
+        <div>
+          <h4 class="text-base font-bold text-white">Want to propose an event or workshop topic?</h4>
+          <p class="text-xs text-neutral-400 mt-1">
+            Director Development & Promotions: Rajitha Thilanka • <a href="mailto:rajithat1998@gmail.com" class="text-amber-400 hover:underline">rajithat1998@gmail.com</a>
+          </p>
+        </div>
+        <a
+          href="mailto:rajithat1998@gmail.com"
+          class="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-neutral-950 text-xs font-bold uppercase tracking-wider flex-shrink-0 transition-all"
+        >
+          Contact Events Directorate
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>

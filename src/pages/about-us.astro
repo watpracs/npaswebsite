@@ -1,0 +1,203 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { boardOfDirectors, pastPresidents, honyExecutiveDirectors } from '../data/board';
+---
+
+<BaseLayout 
+  title="About Us"
+  description="Learn about the history of the National Photographic Art Society of Sri Lanka, its founder Wilson Hegoda, and meet the Board of Directors 2025-2026."
+>
+  <!-- Page Header -->
+  <section class="bg-neutral-900/60 border-b border-neutral-800 py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Who We Are</span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">About The Society</h1>
+      <p class="max-w-2xl mx-auto text-neutral-400 text-sm sm:text-base px-4">
+        A national photographic art movement established in 1950, representing Sri Lanka in the international arena.
+      </p>
+    </div>
+  </section>
+
+  <!-- History & Heritage Section -->
+  <section class="py-16 sm:py-20 bg-neutral-950 border-b border-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-amber-500/10 text-amber-400 text-xs font-bold uppercase">
+            Founded 1950
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight">
+            The Movement That Built Sri Lankan Photography
+          </h2>
+          <div class="text-neutral-300 text-xs sm:text-sm space-y-4 leading-relaxed font-light">
+            <p>
+              The National Photographic Art Society of Sri Lanka was formed in the year 1950, just two years after gaining independence from the British Empire. From its very inception, it originated as a genuine national movement aimed at educating local enthusiasts in the art and craft of photography.
+            </p>
+            <p>
+              A brainchild of the Late Mr. Wilson Hegoda, with the support of enthusiasts including Mr. Nelson Keerthi, Mr. Hilton Samarasinghe, and Prof. G.L.R. De Silva, the Society initially catered for the local photographer community by conducting classes leading to a recognized diploma—free of charge for school students island-wide as a community service.
+            </p>
+            <p>
+              Today, NPAS is the authorized Operational Member and official representative for Sri Lanka in the <strong class="text-white">Fédération Internationale de l'Art Photographique (FIAP)</strong>, and is affiliated to the <strong class="text-white">Photographic Society of America (PSA)</strong> and the <strong class="text-white">Global Photographic Union (GPU)</strong>.
+            </p>
+          </div>
+          
+          <div class="pt-2 flex flex-wrap gap-3 text-xs font-semibold text-neutral-300">
+            <div class="px-3.5 py-2 rounded-lg bg-neutral-900 border border-neutral-800">
+              🏛️ Recognized Charity Entity
+            </div>
+            <div class="px-3.5 py-2 rounded-lg bg-neutral-900 border border-neutral-800">
+              📜 Limited Liability Non-Profit
+            </div>
+            <div class="px-3.5 py-2 rounded-lg bg-neutral-900 border border-neutral-800">
+              🌐 FIAP Operational Member
+            </div>
+          </div>
+        </div>
+
+        <!-- History Portrait -->
+        <div class="relative">
+          <div class="rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl bg-neutral-900">
+            <img
+              src="/assets/images/bod/about-history.jpg"
+              alt="NPAS Historical Movement"
+              class="w-full h-auto object-cover"
+            />
+            <div class="p-5 bg-neutral-900 border-t border-neutral-800 text-xs text-neutral-400">
+              <strong class="text-white block mb-1">Founder's Vision</strong>
+              Late Mr. Wilson Hegoda and the pioneers who dedicated their lives to democratizing photographic knowledge in Sri Lanka.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Board of Directors Section -->
+  <section id="board" class="py-16 sm:py-20 bg-neutral-900/40 border-b border-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+        <span class="text-xs uppercase tracking-widest text-amber-400 font-bold">Leadership</span>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">Board of Directors 2025 – 2026</h2>
+        <p class="text-neutral-400 text-xs sm:text-sm">
+          Administered by an annually elected Board of Directors representing leading photographic artists and educators.
+        </p>
+      </div>
+
+      <!-- Combined Official Board Photo -->
+      <div class="mb-14 rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl bg-neutral-900 max-w-4xl mx-auto">
+        <img
+          src="/assets/images/bod/BOD25-26.jpg"
+          alt="Board of Directors 2025-2026 Group Photo"
+          class="w-full h-auto object-cover"
+        />
+        <div class="p-3.5 bg-neutral-950 text-center text-xs text-neutral-400 font-medium border-t border-neutral-800">
+          Official Portrait of the Board of Directors 2025–2026, National Photographic Art Society of Sri Lanka
+        </div>
+      </div>
+
+      <!-- Director Cards Grid (Clean layout: Photo on top, details underneath so face is NEVER covered) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {boardOfDirectors.map((director) => (
+          <div class="rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden hover:border-amber-500/50 transition-all hover:-translate-y-1 group flex flex-col shadow-xl">
+            
+            <!-- Clean Portrait Box without any text overlay over the face -->
+            <div class="h-68 overflow-hidden bg-neutral-950 flex items-center justify-center p-3 border-b border-neutral-800/80">
+              <img
+                src={director.image}
+                alt={director.name}
+                class="w-full h-full object-contain object-center group-hover:scale-102 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+            
+            <!-- Text Content cleanly separated BELOW the photo -->
+            <div class="p-5 sm:p-6 space-y-3 flex-grow flex flex-col justify-between bg-neutral-900">
+              <div>
+                <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">
+                  {director.name}
+                </h3>
+                <p class="text-xs font-semibold text-amber-400 mt-1">
+                  {director.role}
+                </p>
+              </div>
+
+              <div class="pt-3 border-t border-neutral-800 space-y-1.5 text-xs text-neutral-300">
+                <div class="flex items-center gap-2">
+                  <span class="text-neutral-500">✉</span>
+                  <a href={`mailto:${director.email}`} class="hover:text-amber-400 truncate transition-colors">
+                    {director.email}
+                  </a>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-neutral-500">📞</span>
+                  <a href={`tel:${director.phone.replace(/\s+/g, '')}`} class="hover:text-amber-400 transition-colors">
+                    {director.phone}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Past Presidents & Hony. Executive Directors -->
+  <section class="py-16 sm:py-20 bg-neutral-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
+        
+        <!-- Past Presidents -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-neutral-900/60 border border-neutral-800 space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">
+              👑
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white">Past Presidents</h3>
+              <p class="text-xs text-neutral-400">Guiding the society across seven decades</p>
+            </div>
+          </div>
+          
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-neutral-300">
+            {pastPresidents.map((name) => (
+              <li class="flex items-center gap-2 p-2 rounded bg-neutral-900 border border-neutral-800/60">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                <span class="truncate">{name}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <!-- Hony. Executive Directors -->
+        <div class="p-6 sm:p-8 rounded-2xl bg-neutral-900/60 border border-neutral-800 space-y-6">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold">
+              🎖️
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white">Honorary Executive Directors</h3>
+              <p class="text-xs text-neutral-400">Executive pillars and organizational founders</p>
+            </div>
+          </div>
+
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-neutral-300">
+            {honyExecutiveDirectors.map((name) => (
+              <li class="flex items-center gap-2 p-2 rounded bg-neutral-900 border border-neutral-800/60">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                <span class="truncate">{name}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

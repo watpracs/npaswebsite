@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="Publications & Journals"
+  description="Official publications, periodicals, research articles, and annual journals published by the National Photographic Art Society of Sri Lanka. Download the latest NPAS Journal PDF."
+>
+  <!-- Page Header -->
+  <section class="bg-neutral-900/60 border-b border-neutral-800 py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="text-xs font-bold uppercase tracking-widest text-amber-400">NPAS Periodicals</span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">Publications & Journals</h1>
+      <p class="max-w-2xl mx-auto text-neutral-400 text-sm sm:text-base leading-relaxed px-4">
+        Disseminating photographic literature, technical reviews, historical profiles, and fine-art essays.
+      </p>
+    </div>
+  </section>
+
+  <!-- Publications Content -->
+  <section class="py-16 sm:py-24 bg-neutral-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <!-- Featured Journal Card -->
+      <div class="max-w-4xl mx-auto rounded-3xl bg-neutral-900 border border-neutral-800 p-6 sm:p-12 flex flex-col md:flex-row items-center gap-10 shadow-2xl">
+        
+        <!-- Cover Image with Frame -->
+        <div class="w-full md:w-1/2 rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl bg-neutral-950 flex items-center justify-center p-2 group">
+          <img
+            src="/assets/images/publications/NPAS-Journal-Aug2026-Cover.jpg"
+            alt="NPAS Journal August 2026 Edition Cover"
+            class="w-full h-auto max-h-[460px] object-contain rounded-xl group-hover:scale-102 transition-transform duration-300"
+          />
+        </div>
+
+        <div class="w-full md:w-1/2 space-y-6">
+          <div class="space-y-2">
+            <span class="inline-block px-3 py-1 rounded bg-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider">
+              Latest Edition • August 2026
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+              The NPAS Photographic Journal
+            </h2>
+            <p class="text-xs text-neutral-400">
+              Web & Print Edition • Published by Directorate of Publications & Publicity
+            </p>
+          </div>
+
+          <p class="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light">
+            Features insightful articles on artistic photographic composition, profiles of newly awarded distinction holders (FIAP & NPAS), salon entry techniques, and archival articles commemorating seven decades of the society.
+          </p>
+
+          <div class="pt-4 border-t border-neutral-800 space-y-4">
+            <a
+              href="/assets/docs/publications/NPAS-Journal-AUGUST-Ed.-2026-WEB.pdf"
+              target="_blank"
+              download
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-neutral-950 text-xs font-bold uppercase tracking-wider transition-all shadow-md"
+            >
+              <span>📥</span> Download Full Journal (PDF)
+            </a>
+            
+            <div class="pt-2 text-xs text-neutral-400 space-y-1">
+              <p><strong class="text-white">Director Publications:</strong> Maduranga Abhayawardena</p>
+              <p>Email: <a href="mailto:maduranga.ab@gmail.com" class="text-amber-400 hover:underline">maduranga.ab@gmail.com</a> | Phone: <a href="tel:+94777992429" class="text-amber-400 hover:underline">+94 77 799 2429</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</BaseLayout>
