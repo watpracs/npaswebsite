@@ -1,59 +1,281 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const honoraryFellowsSriLanka = [
+  "Mr. Wilson Hegoda", "Mr. D.C.L. Amarasinghe", "Prof. S.R. Kottegoda", "Dr. M.S. Weerakone",
+  "Mr. B.P. Weerawardane", "Mr. Hilton Samarasinghe", "Gate Mudaliyar A.C.G.S. Amarasekara",
+  "Dr. D.B. Nihalsinghe", "Prof. G.L.R. de Silva", "Mr. L. Dayananda", "Mr. D.G. Ranathunga",
+  "Mr. Gunadasa Hettiarachchi", "Mr. Walvin H.P. Siriwardena", "Mrs. Ranee Weerawardena",
+  "Mr. Lal Hegoda", "Mr. R Mervyn Lenora", "Mrs. Malanie Lenora", "Mr. C.A. Basnayake",
+  "Mr. Kapila P Balasuriya", "Mr. Gunasoma Samarasinghe", "Mr. J.A.C Jayasuriya", "Mr. Sanath de Silva",
+  "Mr. A.S. Jayatissa", "Mr. Dinton De S Jayasuriya", "Mr. Sumiththa Amarasinghe", "Mr. Niloo Bhatt",
+  "Mr. D.A. Nelson Keerthi Silva", "Mr. K.D. Dayananda", "Mr. Chandra Karunarathne", "Mr. Ranasinghe Premadasa",
+  "Rev. Fr. Mercylin Jayakody", "Rev. Fr. Edmond Peiris", "Kalasurie Edwin Kottegoda", "Dr. Jupiter C. Munamale",
+  "Mr. A.A.N. Amarasinghe", "Mr. H.M.R. Perera", "Mr. L.B.S.S. Balasuriya", "Mr. A.D. Dharmasena",
+  "Mr. N.R. Abeyasinghe", "Mr. Kumudu Gunawardana", "Rev. Fr. Benedict Joseph", "Mr. A.S. Rodrigo",
+  "Ms. Soma Somasinghe", "Mr. J.P. de Alwis", "Mr. Mervyn De S. Jayasinghe", "Miss. Srimathie Perera",
+  "Mr. Henry Rajakaruna", "Dr. Ranjan Abeysinghe", "Dr. Lionel Edirisinghe", "Dr. F.D. Hudson Silva",
+  "Dr. Gunadasa Amarasekara", "Mr. S.H. Sauris Silva", "Mr. S. Paneebharatha", "Mr. L.T. Manju Sri",
+  "Mr. G.S. Fernando", "Mr. Henry Jayasena", "Mr. A.T. Ariyarathne", "Mr. Gamini Fonseka",
+  "Mr. K.A. Wijeyrathne", "Mr. A.G.A. Karunarathna", "Mr. VH Hapuarachchi", "Mr. C.Y. Abeywardena",
+  "Mr. Wijaya Basnayake", "Mr. Thilaka R.W. Weralupitiya", "Mr. W.M.S. Bandara", "Mr. Gamini R. Fonseka",
+  "Mr. K. Ubayananda Silva", "Mr. Vajira J. Wickramage", "Mr. D.K. Dissanayake", "Mr. Priyantha Amarasinghe",
+  "Dr. Uditha Gunasekara", "Dr. T.S.U. de Silva", "Mr. M.G. Jayasinghe", "Mr. Keerthi Nissanka",
+  "Mr. Dhammika Wijesinghe", "Mr. S.M.I.K. Senevirathne", "Mr. H.M. Gunasekara", "Mr. S.M. Senevirathne",
+  "Mr. Bandu Gunarathne", "Mr. G.L. Upasena", "Mr. M. Samal P. Perera", "Mr. K.D.K. Dharmawardene",
+  "Mr. D.G. Somapala", "Mr. Merril C. Silva", "Mr. Kanchane Marasinghe", "Ms. Amara Weerasekara",
+  "Mr. Gamini Jayasinghe", "Mr. Tilak Godamanna", "Mr. Thimothy Weeraratne", "Mr. G.D. Vijayadasa",
+  "Miss. Srima Siriwardena", "Mr. Ranjith P Liyanage", "Mr. Rahula Perera", "Prof. Chandrasiri Palliyaguru",
+  "Mr. Anura Eriyagama", "Mr. T.M. Chandana Silva", "Dr. Pandith Amaradewa", "Mr. Sena Kothalawala",
+  "Mr. M.D. Mahindapala", "Mr. H.L. Sunil", "Mr. Lester James Peris", "Mr. L.E. Samararathne",
+  "Mr. K.G. Keerthirathna", "Mr. Sarath Perera", "Mr. Palitha Hegoda", "Mr. Chandrasena Perera",
+  "Mr. Udeni Alwis", "Mr. Mithra S Weerakone", "Ms. Shyamalee Karunapala", "Mr. Priyantha Abeysundara",
+  "Mr. Berty Gunasekara", "Mr. Shanthilal Fernando", "Dr. Dharmasena Pathiraja", "Mr. Chaminda P Upasena",
+  "Mr. Piyasoma Koralewidana", "Ms. Champa Kuruppu", "Mr. Nimal P Edirithilaka", "Mr. Vijith Kanugala",
+  "Archt. Sithumini Rathnamalala", "Mr. T.S.T. de Silva", "Mr. Shantha Gunaratne", "Mr. Saman Kulasuriya",
+  "Mr. W.I. Tyrone Perera", "Mr. Wimal Weerawansa", "Ms. Rathna Wijesinghe", "Mr. D.K. Lanti",
+  "Mr. Samantha Senaka Bandara", "Mr. T.G. Sunil Wickrama", "Mrs. Yamuni Rashmika Perera",
+  "Mr. Gamini Dissanayake", "Kalasurie Sathischandra Edirisinghe", "Mr. S.D. Piyadasa",
+  "Ms. V. Nandani Hettiarachchi", "Kalakeerthi Dr. Edwin Ariyadasa", "Sangeetha Visharada Nanda Malini",
+  "Mr. Mangala Edirisinghe", "Mr. Saman Fernando", "Mr. Lucien Bulathsinhala", "Mr. Naradha Amarathunge",
+  "Mr. Harsha Maduranga Jayasekara", "Mr. Athula Ranaraja", "Mr. Anura Hegoda", "Mr. Upananda Senevirathna",
+  "Ms. Thinesha Edirisinghe", "Mr. H. Ravindra Priyantha Lal", "Mr. Athula Jayasundara", "Mr. Prasanna Withanage"
+];
+
+const honoraryFellowsInternational = [
+  "Mr. Leo Vrana - Austria", "Mr. K. Haung - Singapore", "Mr. Bee Koon Chin - Malaysia",
+  "Mr. Friedrich Mikula - Austria", "Mr. Alan Stobbs - Canada", "Mr. L.P Holan - Czechoslovakia",
+  "Mr. Ilmari Lindberg - Finland", "Mr. Benu Sen - India", "Mr. Tadeusz Kowalski - Poland",
+  "Mr. Schneider Helmut - Romania", "Mr. Gunnar Binde - USSR", "Mr. Tran Xon Vinh - South Vietnam",
+  "Mr. Quan Tin Dan - South Vietnam", "Mr. Peter Roch - Austria", "Mr. Ing Dieter Doppler - Austria",
+  "Mr. Michel Druart - Belgium", "Mr. Jan Andel - Czechoslovakia", "Mr. Pierri Angeli - France",
+  "Mr. Edmond Frings - Germany", "Mr. Sandor Tamasy - Hungary", "Mr. Aris Mosca Telli - Italy",
+  "Mr. Almut Wilschinisky Janssen - Germany", "Dr. Walter Streit - GDR", "Mr. Chef Meulenkamp - Netherlands",
+  "Mr. Andrzej Krynicki - Poland", "Dr. Tran Dai Quang - Vietnam", "Mr. Ani Bal Sequeira - Portugal",
+  "Mr. Leon Balodis - USSR", "Mr. Charles E. Freaser - England", "Prof. Jerjy Warner - Poland",
+  "Prof. Miloslav Stibor - Czechoslovakia", "Mr. Otto Verrant - Austria", "Mr. Rudolf Kulds - Austria",
+  "Mr. Friedrich Horacek - Austria", "Mr. Liew Kok Pheng - Brunei", "Mr. Claudio H. Feliciano - Brazil",
+  "Mr. Clive B. Harrison - England", "Mr. Marko Kamilla - Hungary", "Mr. C. Rajgopal - India",
+  "Mr. Biswatosh Sen Guptha - India", "Mr. Bevilacqua Ermino - Italy", "Mr. Millozzi Gustavo - Italy",
+  "Mr. Renato Guidi - Italy", "Mr. Lief Karlen - Sweden", "Mr. Ola Jonsson - Sweden",
+  "Mr. Gote Kreutsz - Sweden", "Mr. Rudolf Bieri - Switzerland", "Mr. C.T Chang - Taiwan",
+  "Mr. Kun Hung Tasi - Taiwan", "Mr. Peeter Tooming - USSR", "Mr. Sze Keung - Hong Kong",
+  "Mr. S.K Gajree - Australia", "Mr. Dott Antonio Persico - Italy", "Mr. David P.C Tay - Singapore",
+  "Mr. D.V Rao - India", "Mr. Liew Terk Wah - Thailand", "Mr. Waman Thakre - India",
+  "Mr. Derek M. Slattery - Switzerland", "Mr. Shen Che - China", "Mr. Takeshi Tokumasu - Japan",
+  "Mr. Syed Javaid A. Kazi - Pakistan", "Mr. Norman S.K Lau - Singapore", "Mr. Aivars Akis - Latvia",
+  "Mr. Jan Jansen - Netherlands", "Mr. Le Ngoc Minh - USA", "Mr. Tan Lip Seng - Singapore"
+];
 ---
 
 <BaseLayout 
-  title="Membership"
-  description="Become a Member or Life Member of the National Photographic Art Society of Sri Lanka. Enjoy workshops, national salon discounts, distinctions eligibility, and fraternity benefits."
+  title="Movement & Membership"
+  description="Become a Member or Life Member of the National Photographic Art Society of Sri Lanka. Calling applications for the Year 2027 Intake of the free 3-year Diploma in Photography."
 >
-  <!-- Page Header -->
-  <section class="bg-neutral-900/60 border-b border-neutral-800 py-16 sm:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
-      <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Join Our Fraternity</span>
-      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">Society Membership</h1>
-      <p class="max-w-2xl mx-auto text-neutral-400 text-sm sm:text-base leading-relaxed px-4">
-        Connect with over seven decades of photographic tradition, elevate your skills, and earn international recognition.
+
+  <!-- Top Hero Header -->
+  <section class="bg-neutral-900/60 border-b border-neutral-800 py-16 sm:py-24 relative overflow-hidden">
+    <div class="absolute inset-0 bg-radial-vignette pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+      <span class="inline-block px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-widest">
+        Join the National Movement
+      </span>
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white tracking-tight">
+        Movement
+      </h1>
+      <p class="max-w-3xl mx-auto text-neutral-300 text-sm sm:text-base leading-relaxed px-4 font-light">
+        Each year, the National Photographic Art Society of Sri Lanka invites passionate photographers to join our national society. Successful candidates gain entry to our free three-year diploma course, nationwide workshops, and global salon accreditations.
       </p>
     </div>
   </section>
 
-  <!-- Membership Types Grid -->
+  <!-- Special Spotlight Banner: Calling Applications for Year 2027 Intake (Option 2) -->
+  <section class="py-8 bg-neutral-950 border-b border-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl glass-panel-gold p-6 sm:p-10 border border-amber-500/30 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-6 sm:gap-8">
+        <div class="space-y-3 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider">
+            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+            Calling Applications • Year 2027 Intake
+          </div>
+          <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white">
+            New Student Intake for the Free 3-Year Diploma in Photography
+          </h2>
+          <p class="text-xs sm:text-sm text-neutral-300 max-w-2xl font-light">
+            Applications are officially open for the 2027 academic session. Prospective students will be interviewed by the official NPAS selection board before admission. Download the instructions before submitting your online form.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-3.5 flex-shrink-0 w-full sm:w-auto">
+          <!-- Button 1: Apply redirects to https://members.npassrilanka.org/apply -->
+          <a
+            href="https://members.npassrilanka.org/apply"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-xs uppercase tracking-wider text-center transition-all shadow-xl shadow-amber-500/20 hover:scale-105"
+          >
+            Apply Online (2027 Intake) &rarr;
+          </a>
+
+          <!-- Button 2: Download instructions -->
+          <a
+            href="https://drive.google.com/file/d/1EdIWMSoUDweK3la9oq-xb_Q02bFla2Jz/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white font-semibold text-xs tracking-wider text-center border border-neutral-700 hover:border-amber-400 transition-all flex items-center justify-center gap-2"
+          >
+            <span>Download Instructions</span>
+            <span class="text-neutral-400 text-[10px] font-mono">(PDF)</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 Core Membership Tracks (Exact match with high-end architecture) -->
   <section class="py-16 sm:py-24 bg-neutral-950 border-b border-neutral-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
-        <!-- Ordinary / Annual Membership Card -->
-        <div class="rounded-3xl bg-neutral-900 border border-neutral-800 p-8 sm:p-12 space-y-8 flex flex-col justify-between hover:border-amber-500/40 transition-all shadow-xl">
+        <!-- Track 1: General Membership (Annual Enrolment) -->
+        <div class="rounded-3xl glass-panel border border-neutral-800 p-8 sm:p-10 space-y-8 flex flex-col justify-between hover:border-amber-500/40 transition-all duration-300 shadow-2xl group">
           <div class="space-y-6">
-            <div class="inline-block px-3 py-1 rounded bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-wider">
-              General Membership
+            <div class="inline-block px-3 py-1 rounded bg-amber-500/10 text-amber-400 text-xs font-bold uppercase tracking-wider border border-amber-500/20">
+              Annual Enrolment
             </div>
             
             <div>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Ordinary / Associate Member</h2>
-              <p class="text-neutral-400 text-xs sm:text-sm mt-2">
-                Offered annually to successful applicants interested in expanding their photographic horizons.
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-amber-400 transition-colors">
+                General Membership
+              </h2>
+              <p class="text-neutral-300 text-xs sm:text-sm mt-3 leading-relaxed font-light">
+                Granted upon recommendation of an official interview panel appointed under the responsibility of the Executive Director or Director Registrar. Open to any citizen interested in advancing in photographic art.
               </p>
             </div>
 
             <div class="space-y-3 pt-2">
-              <h3 class="text-xs font-bold uppercase tracking-wider text-neutral-200">Key Membership Privileges:</h3>
-              <ul class="space-y-2.5 text-xs text-neutral-300">
-                <li class="flex items-start gap-2">
-                  <span class="text-amber-400">✓</span> Free or discounted admission to workshops, webinars, and field excursions
+              <ul class="space-y-3 text-xs text-neutral-300">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span>Eligible for Free 3-Year Diploma Course</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-amber-400">✓</span> Eligibility to participate in monthly internal competitions
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span>Access to field visits, masterclasses & tours</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-amber-400">✓</span> Concessionary entry fees for the Annual National & International Salons
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span>Submissions to National & International Salons</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-amber-400">✓</span> Eligibility to apply for NPAS and FIAP photographic distinctions
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-neutral-800 space-y-3">
+            <!-- Apply button redirects to https://members.npassrilanka.org/apply -->
+            <a
+              href="https://members.npassrilanka.org/apply"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-xs uppercase tracking-wider text-center transition-all shadow-md hover:scale-[1.02]"
+            >
+              Apply Online &rarr;
+            </a>
+
+            <!-- Download instructions PDF -->
+            <a
+              href="https://drive.google.com/file/d/1EdIWMSoUDweK3la9oq-xb_Q02bFla2Jz/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block w-full py-3 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-neutral-200 font-semibold text-xs tracking-wider text-center border border-neutral-700 hover:border-amber-400 transition-all"
+            >
+              Download Instructions (PDF)
+            </a>
+          </div>
+        </div>
+
+        <!-- Track 2: Life Membership -->
+        <div class="rounded-3xl glass-panel-gold border border-amber-500/20 p-8 sm:p-10 space-y-8 flex flex-col justify-between hover:border-amber-500/50 transition-all duration-300 shadow-2xl relative overflow-hidden group">
+          <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl"></div>
+
+          <div class="space-y-6 relative z-10">
+            <div class="inline-block px-3 py-1 rounded bg-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider border border-amber-500/30">
+              Your Pride of Life
+            </div>
+
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-amber-400 transition-colors">
+                Life Membership
+              </h2>
+              <p class="text-neutral-300 text-xs sm:text-sm mt-3 leading-relaxed font-light">
+                Granted under the unanimous decision of the Director Board for members who have maintained continuous active membership for at least 5 consecutive years upon written request to the Executive Director.
+              </p>
+            </div>
+
+            <div class="space-y-3 pt-2">
+              <ul class="space-y-3 text-xs text-neutral-300">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span>Permanent distinguished standing in NPAS</span>
                 </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-amber-400">✓</span> Receipt of official society publications and digital journals
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span>Voting rights in Society assemblies</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-amber-400 font-bold">✓</span>
+                  <span>Lifelong participation in national exhibitions</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-neutral-800 space-y-3 relative z-10">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSepWhTkHOHO_fGZIm2P4nGWSI1KPdkbF4tu1HY7ARxul8vSqw/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block w-full py-3.5 rounded-xl bg-amber-500/90 hover:bg-amber-400 text-neutral-950 font-bold text-xs uppercase tracking-wider text-center transition-all shadow-md hover:scale-[1.02]"
+            >
+              Request for Life Membership &rarr;
+            </a>
+            <p class="text-[11px] text-center text-neutral-400 font-light">
+              5+ years active membership required.
+            </p>
+          </div>
+        </div>
+
+        <!-- Track 3: Honorary Fellowship -->
+        <div class="rounded-3xl glass-panel border border-neutral-800 p-8 sm:p-10 space-y-8 flex flex-col justify-between hover:border-purple-500/40 transition-all duration-300 shadow-2xl group">
+          <div class="space-y-6">
+            <div class="inline-block px-3 py-1 rounded bg-purple-500/10 text-purple-400 text-xs font-bold uppercase tracking-wider border border-purple-500/20">
+              Highest Civic Honor
+            </div>
+
+            <div>
+              <h2 class="text-2xl sm:text-3xl font-extrabold text-white group-hover:text-purple-300 transition-colors">
+                Honorary Fellowship
+              </h2>
+              <p class="text-neutral-300 text-xs sm:text-sm mt-3 leading-relaxed font-light">
+                Honorary Fellowship of the NPAS (Hon.FNPAS) is conferred strictly by consentient resolution of the Director Board to eminent personalities who have rendered monumental services to photographic art and cultural advancement.
+              </p>
+            </div>
+
+            <div class="space-y-3 pt-2">
+              <ul class="space-y-3 text-xs text-neutral-300">
+                <li class="flex items-start gap-2.5">
+                  <span class="text-purple-400 font-bold">★</span>
+                  <span>Awarded to national pioneers and cultural luminaries</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-purple-400 font-bold">★</span>
+                  <span>Conferred to international photographic icons</span>
+                </li>
+                <li class="flex items-start gap-2.5">
+                  <span class="text-purple-400 font-bold">★</span>
+                  <span>Listed forever on the Society's Roll of Honor</span>
                 </li>
               </ul>
             </div>
@@ -61,65 +283,166 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
           <div class="pt-6 border-t border-neutral-800 space-y-3">
             <a
-              href="mailto:Saliyaliyanage79@gmail.com?subject=NPAS Ordinary Membership Application"
-              class="block w-full py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold text-xs uppercase tracking-wider text-center transition-all shadow-md"
+              href="#roll-of-honor"
+              class="block w-full py-3.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-neutral-100 font-semibold text-xs tracking-wider text-center border border-neutral-700 hover:border-purple-400 transition-all"
             >
-              Apply Online via Registrar &rarr;
+              View Roll of Honor &darr;
             </a>
             <p class="text-[11px] text-center text-neutral-500">
-              Registrar Contact: +94 713 963 030 (Saliya Liyanage)
+              Conferred by unanimous Board resolution.
             </p>
           </div>
         </div>
 
-        <!-- Life Membership Card -->
-        <div class="rounded-3xl bg-neutral-900 border border-neutral-800 p-8 sm:p-12 space-y-8 flex flex-col justify-between hover:border-amber-500/40 transition-all shadow-xl relative overflow-hidden">
-          <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/10 rounded-full blur-2xl"></div>
+      </div>
 
-          <div class="space-y-6 relative">
-            <div class="inline-block px-3 py-1 rounded bg-amber-500/20 text-amber-400 text-xs font-bold uppercase tracking-wider">
-              Prestigious Status
-            </div>
+    </div>
+  </section>
 
-            <div>
-              <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Life Membership</h2>
-              <p class="text-neutral-400 text-xs sm:text-sm mt-2">
-                "Your Pride of Life — For Life": A permanent commitment to the photographic arts in Sri Lanka.
-              </p>
-            </div>
+  <!-- Privileges Offered to NPAS Members -->
+  <section class="py-16 sm:py-24 bg-neutral-900/30 border-b border-neutral-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      
+      <div class="text-center max-w-2xl mx-auto space-y-2">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-amber-400">
+          ✦ MEMBER BENEFITS ✦
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
+          Privileges Offered to NPAS Members
+        </h2>
+        <p class="text-xs sm:text-sm text-neutral-400 font-light">
+          A few of the premier facilities and professional pathways extended to every recognized society member.
+        </p>
+      </div>
 
-            <div class="space-y-3 pt-2">
-              <h3 class="text-xs font-bold uppercase tracking-wider text-neutral-200">Life Member Privileges:</h3>
-              <ul class="space-y-2.5 text-xs text-neutral-300">
-                <li class="flex items-start gap-2">
-                  <span class="text-amber-400">★</span> Lifetime voting rights at the Annual General Meeting (AGM)
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-amber-400">★</span> Exemption from recurring annual membership renewal subscriptions
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-amber-400">★</span> Official Life Member certificate and institutional lapel badge
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-amber-400">★</span> Priority invitation to VIP jury sessions and national exhibition galas
-                </li>
-                <li class="flex items-start gap-2">
-                  <span class="text-amber-400">★</span> Eligibility to be elected to the Board of Directors
-                </li>
-              </ul>
-            </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        
+        <div class="p-7 rounded-2xl glass-panel border border-neutral-800 space-y-4 hover:border-amber-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-400 text-xl font-bold">
+            🎓
           </div>
+          <h3 class="text-base font-bold text-white">Free 3-Year Diploma Course</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed font-light">
+            An opportunity to follow the comprehensive three-year Diploma in Photography curriculum free of charge, with structured exams and convocation.
+          </p>
+        </div>
 
-          <div class="pt-6 border-t border-neutral-800 space-y-3 relative">
-            <a
-              href="mailto:Saliyaliyanage79@gmail.com?subject=Life Membership Request"
-              class="block w-full py-3.5 rounded-xl bg-neutral-800 hover:bg-neutral-700 text-white font-bold text-xs uppercase tracking-wider text-center border border-neutral-700 hover:border-amber-500/50 transition-all shadow-md"
-            >
-              Request Life Membership &rarr;
-            </a>
-            <p class="text-[11px] text-center text-amber-400/80">
-              Applications reviewed semi-annually by the Executive Directorate.
-            </p>
+        <div class="p-7 rounded-2xl glass-panel border border-neutral-800 space-y-4 hover:border-amber-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-400 text-xl font-bold">
+            🧭
+          </div>
+          <h3 class="text-base font-bold text-white">Seminars, Excursions & Tours</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed font-light">
+            Regular participation in hands-on lighting workshops, field excursions, wildlife safaris, and masterclass webinars conducted by veterans.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-2xl glass-panel border border-neutral-800 space-y-4 hover:border-amber-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-400 text-xl font-bold">
+            🖼️
+          </div>
+          <h3 class="text-base font-bold text-white">National & International Salons</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed font-light">
+            Direct submission privileges and discounted entry fees for the prestigious Annual NPAS National Competition and FIAP Patronage Salons.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-2xl glass-panel border border-neutral-800 space-y-4 hover:border-amber-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-400 text-xl font-bold">
+            🏅
+          </div>
+          <h3 class="text-base font-bold text-white">NPAS Distinctions Pathway</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed font-light">
+            Pathway to apply for Licentiateship (LNPAS), Associateship (ANPAS), and Fellowship (FNPAS) distinctions assessed by master adjudicators.
+          </p>
+        </div>
+
+        <div class="p-7 rounded-2xl glass-panel border border-neutral-800 space-y-4 hover:border-amber-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-400 text-xl font-bold">
+            🌐
+          </div>
+          <h3 class="text-base font-bold text-white">Global FIAP Qualifications</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed font-light">
+            As FIAP's Operational Member, NPAS assists members in qualifying for international honors: AFIAP, EFIAP, Es.FIAP, and Master FIAP (MFIAP).
+          </p>
+        </div>
+
+        <div class="p-7 rounded-2xl glass-panel border border-neutral-800 space-y-4 hover:border-amber-500/40 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-400 text-xl font-bold">
+            📖
+          </div>
+          <h3 class="text-base font-bold text-white">Publications & Fraternity</h3>
+          <p class="text-xs text-neutral-400 leading-relaxed font-light">
+            Receipt of official society journals, exhibition catalogues, monthly internal competitions, and community fellowship across Sri Lanka.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Roll of Honor: Honorary Fellows (National & International) -->
+  <section id="roll-of-honor" class="py-16 sm:py-24 bg-neutral-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      
+      <div class="text-center max-w-3xl mx-auto space-y-3">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-purple-400">
+          Roll of Honor
+        </span>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white">
+          Honorary Fellowship Holders (Hon. FNPAS)
+        </h2>
+        <p class="text-xs sm:text-sm text-neutral-400 font-light">
+          Recognizing the esteemed national pioneers and world photography luminaries who have enriched the art and fraternity of the National Photographic Art Society.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        
+        <!-- Sri Lanka Roll of Honor -->
+        <div class="rounded-3xl glass-panel p-8 sm:p-10 border border-neutral-800 space-y-6">
+          <div class="flex items-center justify-between border-b border-neutral-800 pb-4">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <span class="text-amber-400">🇱🇰</span> National Roll of Honor
+            </h3>
+            <span class="text-xs font-mono text-neutral-400 bg-neutral-900 px-2.5 py-1 rounded border border-neutral-800">
+              Sri Lankan Luminaries
+            </span>
+          </div>
+          
+          <div class="max-h-96 overflow-y-auto pr-2 space-y-2 text-xs text-neutral-300 font-light custom-scrollbar">
+            <ul class="divide-y divide-neutral-800/60">
+              {honoraryFellowsSriLanka.map((fellow) => (
+                <li class="py-2 flex items-center gap-2 hover:text-amber-400 transition-colors">
+                  <span class="text-amber-400/60 text-[10px]">★</span>
+                  <span>{fellow}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- International Roll of Honor -->
+        <div class="rounded-3xl glass-panel p-8 sm:p-10 border border-neutral-800 space-y-6">
+          <div class="flex items-center justify-between border-b border-neutral-800 pb-4">
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <span class="text-purple-400">🌍</span> International Roll of Honor
+            </h3>
+            <span class="text-xs font-mono text-neutral-400 bg-neutral-900 px-2.5 py-1 rounded border border-neutral-800">
+              Global Icons
+            </span>
+          </div>
+          
+          <div class="max-h-96 overflow-y-auto pr-2 space-y-2 text-xs text-neutral-300 font-light custom-scrollbar">
+            <ul class="divide-y divide-neutral-800/60">
+              {honoraryFellowsInternational.map((fellow) => (
+                <li class="py-2 flex items-center gap-2 hover:text-purple-300 transition-colors">
+                  <span class="text-purple-400/60 text-[10px]">★</span>
+                  <span>{fellow}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
